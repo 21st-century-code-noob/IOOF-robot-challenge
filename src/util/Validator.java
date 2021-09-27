@@ -18,13 +18,13 @@ public class Validator {
         if (coorAndDirection.length != 3){
             return false;
         }
-        if (coorAndDirection[2] != "EAST" || coorAndDirection[2] != "NORTH"
-                || coorAndDirection[2] != "SOUTH" ||coorAndDirection[2] != "WEST"){
+        if (!coorAndDirection[2].equals("EAST") && !coorAndDirection[2].equals("NORTH")
+                && !coorAndDirection[2].equals("SOUTH") && !coorAndDirection[2].equals("WEST")){
             return false;
         }
         try{
-            int x = Integer.valueOf(coorAndDirection[0]);
-            int y = Integer.valueOf(coorAndDirection[1]);
+            int x = Integer.parseInt(coorAndDirection[0]);
+            int y = Integer.parseInt(coorAndDirection[1]);
             if ( x >= 1 && x <= 5 && y >= 1 && y <=5){
                 return true;
             }
@@ -36,7 +36,7 @@ public class Validator {
         }
     }
 
-    public static boolean validateRobotInstruction(String instruction){
+    public static boolean robotInstructionValidator(String instruction){
         if (instruction.trim().equals("")){
             return false;
         }

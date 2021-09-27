@@ -3,7 +3,7 @@ package util;
 import throwable.InvalidDirectionException;
 
 public class Mapper {
-    public static String intToDirectionMapper(int i){
+    public static String intToDirectionMapper(int i) throws InvalidDirectionException {
         switch(i){
             case 1:
                 return "NORTH";
@@ -14,7 +14,7 @@ public class Mapper {
             case 4:
                 return "WEST";
             default:
-                return "INVALID";
+                throw new InvalidDirectionException("Invalid direction.");
         }
     }
 
@@ -30,7 +30,6 @@ public class Mapper {
                 return 4;
             default:
                 throw new InvalidDirectionException("Invalid direction.");
-                //0 is invalid
         }
     }
 
