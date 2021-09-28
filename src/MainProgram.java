@@ -89,6 +89,10 @@ public class MainProgram {
         System.out.print("use PLACE to add your first robot: ");
         String instruction;
         instruction = reader.nextLine();
+        if (instruction.equals("EXIT")){
+            System.out.println("Program will now exit.");
+            System.exit(0);
+        }
         if (handlePlaceInstruction(instruction)){
             this.activeRobot = 0;
             return true;
