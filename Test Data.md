@@ -2,7 +2,7 @@ I manually tested the program.
 
 ##Test 1: Create a new robot and move.
 
-Instructions:   
+Instructions:    
 *PLACE 1,1,EAST*  
 *LEFT*  
 *MOVE*  
@@ -11,7 +11,7 @@ Instructions:
 *MOVE*
 *REPORT*
 
-Eexpected output:
+Eexpected output:  
 *Output: 2,1,NORTH*
 *Output: 2,2,EAST*
 
@@ -21,7 +21,7 @@ Actual output:
 
 
 ##Test 2: All four directions
-Instructions:
+Instructions:  
 *PLACE 0,0,EAST*
 *REPORT*
 *LEFT*  
@@ -33,7 +33,7 @@ Instructions:
 *LEFT*
 *REPORT*
 
-Expected output:
+Expected output:  
 *Output: 0,0,EAST*  
 *Output: 0,0,NORTH*  
 *Output: 0,0,WEST*  
