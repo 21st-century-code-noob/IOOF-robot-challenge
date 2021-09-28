@@ -1,41 +1,115 @@
-I manually tested the program.
+I manually tested the program. I didnt't use automated unit testing such as JUnit. But if it is required, I can add it later.
 
-##Test 1: Create a new robot and move.
+## Test 1: Create a new robot and move.
 
-Instructions:    
+### Instructions:   
 *PLACE 1,1,EAST*  
 *LEFT*  
 *MOVE*  
 *REPORT*  
-*RIGHT*
-*MOVE*
-*REPORT*
+*RIGHT*  
+*MOVE*  
+*REPORT*  
 
-Eexpected output:  
-*Output: 2,1,NORTH*
+### Eexpected output:
+*Output: 2,1,NORTH*  
 *Output: 2,2,EAST*
 
-Actual output:
-*Output: 2,1,NORTH*
-*Output: 2,2,EAST*
+### Actual output:
+*Output: 2,1,NORTH*  
+*Output: 2,2,EAST*  
 
 
-##Test 2: All four directions
-Instructions:  
-*PLACE 0,0,EAST*
-*REPORT*
-*LEFT*  
+## Test 2: All four directions
+### Instructions:  
+*PLACE 0,0,EAST*  
 *REPORT*  
 *LEFT*  
 *REPORT*  
-*LEFT*
+*LEFT*  
+*REPORT*  
+*LEFT*  
 *REPORT*
-*LEFT*
+*LEFT*  
 *REPORT*
 
-Expected output:  
+### Expected output:
 *Output: 0,0,EAST*  
 *Output: 0,0,NORTH*  
 *Output: 0,0,WEST*  
 *Output: 0,0,SOUTH*  
 *Output: 0,0,EAST*  
+
+### Actual output:
+*Output: 0,0,EAST*  
+*Output: 0,0,NORTH*  
+*Output: 0,0,WEST*  
+*Output: 0,0,SOUTH*  
+*Output: 0,0,EAST* 
+
+## Test 3: Robot won't fall off once reached the table border
+### Instructions:
+*PLACE PLACE 3,4,EAST*  
+*MOVE*  
+*REPORT*  
+*MOVE*  
+*REPORT*  
+*RIGHT*  
+*RIGHT*  
+*MOVE*  
+*REPORT*  
+
+### Expected output:
+*Output:4,4,EAST*  
+*Output:4,4,EAST*  
+*Output:3,4,EAST*  
+
+### Actual output:
+*Output:4,4,EAST*  
+*Output:4,4,EAST*  
+*Output:3,4,EAST*  
+
+## Test 4: Add multiple robots and move them respectively.
+### Instructions:
+*PLACE 2,2,EAST*  
+*PLACE 2,2,SOUTH*  
+*PLACE 2,2,NORTH*  
+*REPORT*  
+*MOVE*  
+*REPORT*  
+*ROBOT 2*  
+*REPORT*  
+*MOVE*  
+*REPORT*  
+*ROBOT3*  
+*REPORT*  
+*MOVE*  
+*REPORT*  
+*ROBOT 1*  
+*REPORT*  
+
+### Expected output:
+*Output:2,2,EAST*  
+*Output:3,2,EAST*   
+*Output:2,2,SOUTH*  
+*Output:2,1,SOUTH*  
+*Output:2,2,NORTH*  
+*Output:2,3,NORTH*  
+*Output:3,2,EAST*  
+
+### Actual output:
+*Output:2,2,EAST*  
+*Output:3,2,EAST*   
+*Output:2,2,SOUTH*  
+*Output:2,1,SOUTH*  
+*Output:2,2,NORTH*  
+*Output:2,3,NORTH*  
+*Output:3,2,EAST*  
+
+
+
+
+
+
+
+
