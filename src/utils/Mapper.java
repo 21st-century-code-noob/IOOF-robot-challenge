@@ -1,6 +1,6 @@
-package util;
+package utils;
 
-import throwable.InvalidDirectionException;
+import throwables.InvalidDirectionException;
 
 public class Mapper {
     public static String intToDirectionMapper(int i) throws InvalidDirectionException {
@@ -32,5 +32,7 @@ public class Mapper {
                 throw new InvalidDirectionException("Invalid direction.");
         }
     }
+
+    //todo: use data pair and List stream to map data.
 
 }

@@ -1,4 +1,4 @@
-package throwable;
+package throwables;
 
 public class InvalidDirectionException extends Exception{
     public InvalidDirectionException(String errorMessage) {

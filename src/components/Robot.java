@@ -1,7 +1,10 @@
-import throwable.InvalidDirectionException;
-import util.Mapper;
+package components;
 
-public class Robot implements Moveable {
+import game.Board;
+import interfaces.Movable;
+import throwables.InvalidDirectionException;
+
+public class Robot implements Movable {
     private int[] coordinateXY= new int[2];
     private int direction;
     //using int to represent direction. 1 = north, 2 = east, 3 = south, 4 = west.
@@ -31,25 +34,26 @@ public class Robot implements Moveable {
     }
 
     //functions
-    public void move() throws InvalidDirectionException {
+    public void move(Board board) throws InvalidDirectionException {
         switch (direction) {
             case 1:
-                this.coordinateXY[1] = this.coordinateXY[1] < 5 ? this.coordinateXY[1] + 1 : this.coordinateXY[1];
+                this.coordinateXY[1] = this.coordinateXY[1] < board.getHeight() ? this.coordinateXY[1] + 1 : this.coordinateXY[1];
                 break;
             case 2:
-                this.coordinateXY[0] = this.coordinateXY[0] < 5 ? this.coordinateXY[0] + 1 : this.coordinateXY[0];
+                this.coordinateXY[0] = this.coordinateXY[0] < board.getWidth() ? this.coordinateXY[0] + 1 : this.coordinateXY[0];
                 break;
             case 3:
-                this.coordinateXY[1] = this.coordinateXY[1] > 1 ? this.coordinateXY[1] - 1 : this.coordinateXY[1];
+                this.coordinateXY[1] = this.coordinateXY[1] > 0 ? this.coordinateXY[1] - 1 : this.coordinateXY[1];
                 break;
             case 4:
-                this.coordinateXY[0] = this.coordinateXY[0] > 1 ? this.coordinateXY[0] - 1 : this.coordinateXY[0];
+                this.coordinateXY[0] = this.coordinateXY[0] > 0 ? this.coordinateXY[0] - 1 : this.coordinateXY[0];
                 break;
             default:
                 throw new InvalidDirectionException("Invalid Direction");
         }
     }
 
+    //todo: how to avoid magic number here?
     public void turnLeft(){
         this.direction = this.direction <= 1 ? 4 : this.direction - 1;
     }

@@ -1,17 +1,24 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import util.InstructionParser;
-import util.Validator;
-import util.Mapper;
+import components.Robot;
+import game.Board;
+import utils.InstructionParser;
+import utils.Validator;
+import utils.Mapper;
 
 public class MainProgram {
     private ArrayList<Robot> robots = new ArrayList<>();
     private int activeRobot; //starts from 0
+    private Board board;
     Scanner reader = new Scanner(System.in);
 
+    public MainProgram(int width, int height){
+        this.board = new Board(width, height);
+    }
+
     public static void main(String[] args){
-        MainProgram program = new MainProgram();
+        MainProgram program = new MainProgram(4,4);
         program.start();
     }
 
@@ -45,7 +52,7 @@ public class MainProgram {
             }
             else if (instruction.equals("MOVE")){
                 try {
-                    robots.get(activeRobot).move();
+                    robots.get(activeRobot).move(board);
                     System.out.println();
                 }catch (Exception e){
                     System.out.println("Can't Move. There is an error with this robot. Use LEFT or RIGHT to recalibrate direction.");
@@ -95,7 +102,7 @@ public class MainProgram {
 
     //returns true if success, else returns false.
     public boolean handlePlaceInstruction(String instruction) {
-        if (Validator.placeInstructionValidator(instruction)){
+        if (Validator.placeInstructionValidator(instruction, board)){
             try {
                 int[] coorAndDirection = InstructionParser.parsePlaceInstruction(instruction);
                 Robot robot = new Robot(coorAndDirection[0], coorAndDirection[1], coorAndDirection[2]);

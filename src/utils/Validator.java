@@ -1,9 +1,11 @@
-package util;
+package utils;
+
+import game.Board;
 
 public class Validator {
 
     //todo: replace all the if statements with RegEx.
-    public static boolean placeInstructionValidator(String instruction){
+    public static boolean placeInstructionValidator(String instruction, Board board){
         if (instruction.trim().equals("")){
             return false;
         }
@@ -25,7 +27,7 @@ public class Validator {
         try{
             int x = Integer.parseInt(coorAndDirection[0]);
             int y = Integer.parseInt(coorAndDirection[1]);
-            if ( x >= 1 && x <= 5 && y >= 1 && y <=5){
+            if ( x >= 0 && x <= board.getWidth() && y >= 0 && y <= board.getHeight()){
                 return true;
             }
             else {
