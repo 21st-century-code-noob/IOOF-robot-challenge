@@ -12,11 +12,11 @@ I manually tested the program. I didnt't use automated unit testing such as JUni
 *REPORT*  
 
 ### Eexpected output:
-*Output: 2,1,NORTH*  
+*Output: 1,2,NORTH*  
 *Output: 2,2,EAST*
 
 ### Actual output:
-*Output: 2,1,NORTH*  
+*Output: 1,2,NORTH*  
 *Output: 2,2,EAST*  
 
 
@@ -62,12 +62,12 @@ I manually tested the program. I didnt't use automated unit testing such as JUni
 ### Expected output:
 *Output:4,4,EAST*  
 *Output:4,4,EAST*  
-*Output:3,4,EAST*  
+*Output:3,4,WEST*  
 
 ### Actual output:
 *Output:4,4,EAST*  
 *Output:4,4,EAST*  
-*Output:3,4,EAST*  
+*Output:3,4,WEST*  
 
 ## Test 4: Add multiple robots and move them respectively.
 ### Instructions:
@@ -107,9 +107,32 @@ I manually tested the program. I didnt't use automated unit testing such as JUni
 *Output:3,2,EAST*  
 
 
+## Test 5: Error handling
 
+### Instructions:
+*34345*  
+*PLACE 1,2,BBB*  
+*MOVE*  
+*LEFT*  
+*PLACE 1,1,EAST*  
+*ASDF*  
+*ROBOT 2*   
 
+### Expected output:
+*Invalid Instruction. Please retry.*   
+*Invalid Instruction. Please retry.*   
+*Invalid Instruction. Please retry.*   
+*Invalid Instruction. Please retry.*   
+(Successful. No output.)
+*Invalid Instruction. Please retry.*   
+*No such robot*  
 
-
-
+### Actual output:
+*Invalid Instruction. Please retry.*   
+*Invalid Instruction. Please retry.*   
+*Invalid Instruction. Please retry.*   
+*Invalid Instruction. Please retry.*   
+(Successful. No output.)
+*Invalid Instruction. Please retry.*   
+*No such robot*  
 
