@@ -1,38 +1,26 @@
 package utils;
 
+import data.IntDirectionDataPair;
 import throwables.InvalidDirectionException;
 
+import java.util.List;
+
+
 public class Mapper {
-    public static String intToDirectionMapper(int i) throws InvalidDirectionException {
-        switch(i){
-            case 1:
-                return "NORTH";
-            case 2:
-                return "EAST";
-            case 3:
-                return "SOUTH";
-            case 4:
-                return "WEST";
-            default:
-                throw new InvalidDirectionException("Invalid direction.");
-        }
+
+    private final static List<IntDirectionDataPair> list = List.of(
+            new IntDirectionDataPair(1, "NORTH"),
+            new IntDirectionDataPair(2, "EAST"),
+            new IntDirectionDataPair(3, "SOUTH"),
+            new IntDirectionDataPair(4, "WEST"));
+
+    public static String findDirectionByInt (int i) throws InvalidDirectionException {
+        return list.stream().filter(pair -> pair.getDirectionInt() == i).findAny().orElseThrow(() -> new InvalidDirectionException("Invalid Direction")).getDirection();
     }
 
-    public static int directionToIntMapper(String str) throws InvalidDirectionException {
-        switch(str){
-            case "NORTH":
-                return 1;
-            case "EAST":
-                return 2;
-            case "SOUTH":
-                return 3;
-            case "WEST":
-                return 4;
-            default:
-                throw new InvalidDirectionException("Invalid direction.");
-        }
+    public static int findIntByDirection (String str) throws InvalidDirectionException {
+        return list.stream().filter(pair -> pair.getDirection().equals(str)).findAny().orElseThrow(() -> new InvalidDirectionException("Invalid Direction")).getDirectionInt();
     }
 
-    //todo: use data pair and List stream to map data.
 
 }

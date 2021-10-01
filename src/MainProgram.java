@@ -141,7 +141,7 @@ public class MainProgram {
         Robot robot = this.robots.get(activeRobot);
         String directionStr;
         try {
-            directionStr = Mapper.intToDirectionMapper(robot.getDirection());
+            directionStr = Mapper.findDirectionByInt(robot.getDirection());
             System.out.println("Output: " + robot.getCoordinateXY()[0] + ", " + robot.getCoordinateXY()[1] + ", " + directionStr );
         }catch (Exception e){
             System.out.println("There is an error");
