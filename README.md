@@ -6,7 +6,7 @@ The instructions are case sensitive.
 
 1. *PLACE [X],[Y],[F]* 
 
-Add a toy robot to the board and assign its initial location. X is horizontal ordinate, Y is vertical ordinate, F is initial facing direction (EAST, NORTH, SOUTH or WEST). 
+Add a toy robot to the board and assign its initial location. X is horizontal coordinate, Y is vertical coordinate, F is initial facing direction (EAST, NORTH, SOUTH or WEST). 
 
 2. *LEFT*
 
