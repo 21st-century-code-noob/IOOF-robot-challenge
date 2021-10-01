@@ -20,6 +20,10 @@ Turn right the robot by 90 degrees.
 
 Report the status of the active robot.
 
-5. *EXIT*
+5. *ROBOT [N]*
+
+N is a nunber. This instruction will change the active robot to the N-th robot. e.g. if there are 3 robots, *ROBOT 3* changes active robot to the third robot.
+
+6. *EXIT*
 
 Exit the program
